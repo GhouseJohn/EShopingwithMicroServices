@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Eshoping.Registration.props" />
+</Project>

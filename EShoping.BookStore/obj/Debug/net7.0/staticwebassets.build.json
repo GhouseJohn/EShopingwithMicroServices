@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9tppx44GRXfK86Q8SXGvlRrCk8UEDNQgsUUvZfHCUyY=",
+  "Source": "EShoping.BookStore",
+  "BasePath": "_content/EShoping.BookStore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
