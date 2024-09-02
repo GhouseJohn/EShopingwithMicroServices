@@ -10,5 +10,14 @@ namespace Eshoping.Registration.DataBase
         {
         }
         public DbSet<Test> test { get; set; }
+        public DbSet<UserInfo> UserInfo { get; set; }
+        public DbSet<PermentaAddress> PermentaAddress { get; set; }
+        public DbSet<TemporaryAddress> TemporaryAddress { get; set; }
+        public DbSet<DistrictDetais> DistrictDetais { get; set; }
+        public DbSet<CityDetails> CityDetails { get; set; }
+        public DbSet<Gender> Gender { get; set; }
+
+
+
     }
 }
