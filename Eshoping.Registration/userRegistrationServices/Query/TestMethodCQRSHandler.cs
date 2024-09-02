@@ -1,15 +1,13 @@
 ﻿using Eshoping.Registration.model.UserRegistartion;
-using Eshoping.Registration.userRegistrationServices.IuserRegistrationServices;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections;
+
 
 namespace Eshoping.Registration.userRegistrationServices.Query
 {
     public class TestMethodCQRSHandler : IRequestHandler<testmethodeCQRS, IEnumerable<Test>>
     {
-        private readonly IUserregistration IUserregistration;
-        public TestMethodCQRSHandler(IUserregistration iUserregistration)
+        private readonly ItestSegrigation IUserregistration;
+        public TestMethodCQRSHandler(ItestSegrigation iUserregistration)
         {
             IUserregistration = iUserregistration;
         }
@@ -23,8 +21,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class GetListByIdHandler : IRequestHandler<GetRecordById, Test>
     {
-        private readonly IUserregistration IUserregistration;
-        public GetListByIdHandler(IUserregistration iUserregistration)
+        private readonly ItestSegrigation IUserregistration;
+        public GetListByIdHandler(ItestSegrigation iUserregistration)
         {
                 IUserregistration = iUserregistration;
         }
@@ -38,8 +36,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class DeleteRecordByIdHandler : IRequestHandler<DeleteRecordById, bool>
     {
-        private readonly IUserregistration IUserregistration;
-        public DeleteRecordByIdHandler(IUserregistration iUserregistration)
+        private readonly ItestSegrigation IUserregistration;
+        public DeleteRecordByIdHandler(ItestSegrigation iUserregistration)
         {
             IUserregistration = iUserregistration;
         }

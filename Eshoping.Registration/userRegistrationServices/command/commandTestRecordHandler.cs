@@ -1,13 +1,12 @@
 ﻿using Eshoping.Registration.model.UserRegistartion;
-using Eshoping.Registration.userRegistrationServices.IuserRegistrationServices;
 using MediatR;
 
 namespace Eshoping.Registration.userRegistrationServices.command
 {
     public class commandTestRecordHandler : IRequestHandler<commandTestRecordInsertion, bool>
     {
-        private readonly IUserregistration IUserregistration;
-        public commandTestRecordHandler(IUserregistration userRegistration)
+        private readonly ItestSegrigation IUserregistration;
+        public commandTestRecordHandler(ItestSegrigation userRegistration)
         {
             this.IUserregistration = userRegistration;
         }
@@ -25,8 +24,8 @@ namespace Eshoping.Registration.userRegistrationServices.command
 
     public class commandTestRecordUpdationHandler: IRequestHandler<commandTestRecordUpdation, bool>
     {
-        private readonly IUserregistration IUserregistration;
-        public commandTestRecordUpdationHandler(IUserregistration userRegistration)
+        private readonly ItestSegrigation IUserregistration;
+        public commandTestRecordUpdationHandler(ItestSegrigation userRegistration)
         {
             this.IUserregistration = userRegistration;
         }

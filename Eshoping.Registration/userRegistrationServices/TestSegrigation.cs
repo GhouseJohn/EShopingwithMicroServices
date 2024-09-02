@@ -1,15 +1,14 @@
 ﻿using Eshoping.Registration.DataBase;
 using Eshoping.Registration.model.UserRegistartion;
-using Eshoping.Registration.userRegistrationServices.IuserRegistrationServices;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 
 namespace Eshoping.Registration.userRegistrationServices
 {
-    public class Userregistration : IUserregistration
+    public class TestSegrigation : ITestSegrigation
     {
         private readonly ApplicationDbContext _dbContext;
-        public Userregistration(ApplicationDbContext dbContext)
+        public TestSegrigation(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }

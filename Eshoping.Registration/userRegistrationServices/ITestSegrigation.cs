@@ -1,9 +1,9 @@
 ﻿using Eshoping.Registration.model.UserRegistartion;
 using System.Collections;
 
-namespace Eshoping.Registration.userRegistrationServices.IuserRegistrationServices
+namespace Eshoping.Registration.userRegistrationServices
 {
-    public interface IUserregistration
+    public interface ITestSegrigation
     {
         Task<IEnumerable<Test>> getName();
         Task<Test> getName(int id);
