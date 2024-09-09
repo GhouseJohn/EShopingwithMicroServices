@@ -6,8 +6,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 {
     public class TestMethodCQRSHandler : IRequestHandler<testmethodeCQRS, IEnumerable<Test>>
     {
-        private readonly ItestSegrigation IUserregistration;
-        public TestMethodCQRSHandler(ItestSegrigation iUserregistration)
+        private readonly ITestSegrigation IUserregistration;
+        public TestMethodCQRSHandler(ITestSegrigation iUserregistration)
         {
             IUserregistration = iUserregistration;
         }
@@ -21,8 +21,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class GetListByIdHandler : IRequestHandler<GetRecordById, Test>
     {
-        private readonly ItestSegrigation IUserregistration;
-        public GetListByIdHandler(ItestSegrigation iUserregistration)
+        private readonly ITestSegrigation IUserregistration;
+        public GetListByIdHandler(ITestSegrigation iUserregistration)
         {
                 IUserregistration = iUserregistration;
         }
@@ -36,8 +36,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class DeleteRecordByIdHandler : IRequestHandler<DeleteRecordById, bool>
     {
-        private readonly ItestSegrigation IUserregistration;
-        public DeleteRecordByIdHandler(ItestSegrigation iUserregistration)
+        private readonly ITestSegrigation IUserregistration;
+        public DeleteRecordByIdHandler(ITestSegrigation iUserregistration)
         {
             IUserregistration = iUserregistration;
         }

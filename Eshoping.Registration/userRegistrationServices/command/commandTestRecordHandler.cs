@@ -5,8 +5,8 @@ namespace Eshoping.Registration.userRegistrationServices.command
 {
     public class commandTestRecordHandler : IRequestHandler<commandTestRecordInsertion, bool>
     {
-        private readonly ItestSegrigation IUserregistration;
-        public commandTestRecordHandler(ItestSegrigation userRegistration)
+        private readonly ITestSegrigation IUserregistration;
+        public commandTestRecordHandler(ITestSegrigation userRegistration)
         {
             this.IUserregistration = userRegistration;
         }
@@ -24,8 +24,8 @@ namespace Eshoping.Registration.userRegistrationServices.command
 
     public class commandTestRecordUpdationHandler: IRequestHandler<commandTestRecordUpdation, bool>
     {
-        private readonly ItestSegrigation IUserregistration;
-        public commandTestRecordUpdationHandler(ItestSegrigation userRegistration)
+        private readonly ITestSegrigation IUserregistration;
+        public commandTestRecordUpdationHandler(ITestSegrigation userRegistration)
         {
             this.IUserregistration = userRegistration;
         }

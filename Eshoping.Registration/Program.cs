@@ -3,6 +3,7 @@ using Eshoping.Registration.userRegistrationServices.UserRegistrationDependency;
 using Microsoft.EntityFrameworkCore;
 using MediatR;
 using Eshoping.Registration.utility;
+using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +22,21 @@ builder.Services.AdduserRegistrationServices();
 builder.Services.AddMediatR(typeof(DemoLibraryMediatREntrypoint).Assembly);
 
 
+//mapper
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+//cors
+var MyAllowSpecificOrigins = "http://localhost:4200/";
+builder.Services.AddCors(options =>
+{
+
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          //policy.WithOrigins("http://example.com",
+                          //                    "http://www.contoso.com");
+                      });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -29,7 +45,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors(MyAllowSpecificOrigins);
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

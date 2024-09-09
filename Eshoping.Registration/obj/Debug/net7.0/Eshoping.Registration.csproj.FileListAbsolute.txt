@@ -76,3 +76,5 @@ D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7
 D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
 D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7.0\Mono.TextTemplating.dll
 D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7.0\System.CodeDom.dll
+D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7.0\AutoMapper.dll
+D:\shopingProject\microservice\EShoping.App\Eshoping.Registration\bin\Debug\net7.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

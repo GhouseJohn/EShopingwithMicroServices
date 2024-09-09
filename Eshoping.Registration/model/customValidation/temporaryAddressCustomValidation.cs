@@ -13,7 +13,7 @@ namespace Eshoping.Registration.model.customValidation
             }
             if(_temporaryAddress is not null)
             {
-                foreach(var _tempvalue in _temporaryAddress.TemporaryAddress)
+                foreach(var _tempvalue in _temporaryAddress.TemporaryAddress_model)
                 {
                     if (string.IsNullOrEmpty(_tempvalue?.HNo) || string.IsNullOrWhiteSpace(_tempvalue.HNo))
                     {
@@ -23,11 +23,11 @@ namespace Eshoping.Registration.model.customValidation
                     {
                         return new ValidationResult($"White spece or null or empty value not accepected");
                     }
-                    else if(_tempvalue.streetName.Length > 5)
-                    {
-                        return new ValidationResult($"minimum 5 char Req");
+                    //else if(_tempvalue.streetName.Length > 5)
+                    //{
+                    //    return new ValidationResult($"minimum 5 char Req");
 
-                    }
+                    //}
                     if (string.IsNullOrEmpty(_tempvalue?.Area) || string.IsNullOrWhiteSpace(_tempvalue.Area))
                     {
                         return new ValidationResult($"White spece or null or empty value not accepected");

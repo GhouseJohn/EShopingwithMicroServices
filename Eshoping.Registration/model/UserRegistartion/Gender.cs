@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Eshoping.Registration.model.UserRegistartion
 {
@@ -6,6 +7,7 @@ namespace Eshoping.Registration.model.UserRegistartion
     {
         [Key]
         public int Gender_Id { get; set; }
-        public string Gender_type { get; set; }
+        [DisplayName("Gender")]
+        public string? Gender_type { get; set; }
     }
 }
