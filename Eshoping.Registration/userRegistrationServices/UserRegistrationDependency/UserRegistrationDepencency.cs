@@ -7,7 +7,7 @@ namespace Eshoping.Registration.userRegistrationServices.UserRegistrationDepende
         public static IServiceCollection AdduserRegistrationServices(this IServiceCollection services)
         {
             services.AddScoped<ITestSegrigation, TestSegrigation>();
-            services.AddScoped<IUserDependencyService, UserDependencyService>();
+            services.AddScoped<IUserRegistartionDependencyService, UserRegistartionDependencyService>();
 
             return services;
         }

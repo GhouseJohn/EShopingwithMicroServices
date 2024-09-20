@@ -11,9 +11,13 @@ namespace EShoping.Authentication.services
     public class JwtTokenGenerator : IJwtTokenGenerator
     {
         private readonly JwtOptions _jwtOptions;
-        public JwtTokenGenerator(IOptions<JwtOptions> jwtOptions)
+        private readonly IConfiguration _configuration;
+        public JwtTokenGenerator(IOptions<JwtOptions> jwtOptions, IConfiguration configuration)
         {
             _jwtOptions = jwtOptions.Value;
+            Console.WriteLine($"Secret: {_jwtOptions.Secret}");
+            _configuration = configuration;
+            var secret = configuration["ApiSettings:JwtOptions:Secret"];
         }
         public string GenerateToken(ApplicationUser applicationUser, IEnumerable<string> roles)
         {

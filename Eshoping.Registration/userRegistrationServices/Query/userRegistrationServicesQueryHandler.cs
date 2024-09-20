@@ -7,8 +7,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class userRegistrationServicesDistrictQueryHandler : IRequestHandler<DistrictData, IEnumerable<DistrictDetais>>
     {
-        private readonly IUserDependencyService IUserDependencyService;
-        public userRegistrationServicesDistrictQueryHandler(IUserDependencyService userDependencyService)
+        private readonly IUserRegistartionDependencyService IUserDependencyService;
+        public userRegistrationServicesDistrictQueryHandler(IUserRegistartionDependencyService userDependencyService)
         {
             IUserDependencyService = userDependencyService;
         }
@@ -21,8 +21,8 @@ namespace Eshoping.Registration.userRegistrationServices.Query
 
     public class UserRegistrationServiceCityQueryHandler : IRequestHandler<CountryListData, IEnumerable<CityDetails>>
     {
-        private readonly IUserDependencyService IUserDependencyService;
-        public UserRegistrationServiceCityQueryHandler(IUserDependencyService userDependencyService)
+        private readonly IUserRegistartionDependencyService IUserDependencyService;
+        public UserRegistrationServiceCityQueryHandler(IUserRegistartionDependencyService userDependencyService)
         {
             IUserDependencyService = userDependencyService;
         }

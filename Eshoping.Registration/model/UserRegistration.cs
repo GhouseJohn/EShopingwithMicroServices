@@ -36,26 +36,7 @@ namespace Eshoping.Registration.model
         //public permanent_Address_ForComminication_model? permanentAddressForComminication { get; set; }
         [temporaryAddressCustomValidation]
         public required List<TemporaryAddress_model> TemporaryAddress_model { get; set; }
-
-
-
-
-
     }
-
-    //public class permanent_Address_ForComminication_model
-    //{
-    //    [Required]
-    //    [Display(Name = "House Number")]
-    //    public required string HNo { get; set; }
-    //    [Required]
-    //    [MinLength(5)]
-    //    public required string streetName { get; set; }
-    //    [Required]
-    //    public required string Area { get; set; }
-    //    [Required]
-    //    public required string Dist { get; set; }
-    //}
 
     public class TemporaryAddress_model
     {
@@ -68,6 +49,8 @@ namespace Eshoping.Registration.model
         public required string Area { get; set; }
         [Required]
         public required int District_Id { get; set; }
+        [Required]
+        public int Cityvalue_id { get; set; }
     }
 
 }

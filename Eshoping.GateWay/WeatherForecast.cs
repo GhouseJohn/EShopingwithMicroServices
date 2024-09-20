@@ -1,4 +1,4 @@
-namespace EShoping.Authentication
+namespace Eshoping.GateWay
 {
     public class WeatherForecast
     {

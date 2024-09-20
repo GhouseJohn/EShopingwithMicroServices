@@ -23,7 +23,8 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFramework
 
 builder.Services.AddTransient<IAuthService, AuthService>();
 
-builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings: JwtOptions"));
+builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings:JwtOptions"));
+//builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection("ApiSettings:JwtOptions"));
 
 var app = builder.Build();
 

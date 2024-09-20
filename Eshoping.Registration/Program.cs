@@ -17,6 +17,9 @@ builder.Services.AddSwaggerGen();
 //sql Server
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+//JWT Connection
+builder.Services.AddDbContext<JwtApplicationDbContext>(opt =>
+                opt.UseSqlServer(builder.Configuration.GetConnectionString("JwtConnection")));
 //Dependencies
 builder.Services.AdduserRegistrationServices();
 builder.Services.AddMediatR(typeof(DemoLibraryMediatREntrypoint).Assembly);

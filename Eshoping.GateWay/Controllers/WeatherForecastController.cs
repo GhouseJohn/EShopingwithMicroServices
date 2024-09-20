@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EShoping.Authentication.Controllers
+namespace Eshoping.GateWay.Controllers
 {
     [ApiController]
     [Route("[controller]")]

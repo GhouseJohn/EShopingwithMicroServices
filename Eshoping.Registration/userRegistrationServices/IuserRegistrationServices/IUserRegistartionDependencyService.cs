@@ -3,7 +3,7 @@ using Eshoping.Registration.model.UserRegistartion;
 
 namespace Eshoping.Registration.userRegistrationServices.IuserRegistrationServices
 {
-    public interface IUserDependencyService
+    public interface IUserRegistartionDependencyService
     {
         Task<IEnumerable<DistrictDetais>> GetDistrictDetaisAsync();
         Task<IEnumerable<CityDetails>> GetCityDetailsAsync(int DistId);

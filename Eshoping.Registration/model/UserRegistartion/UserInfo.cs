@@ -7,12 +7,11 @@ namespace Eshoping.Registration.model.UserRegistartion
         [Key]
         public int UserId { get; set; }
         public required string firstName { get; set; }
-        public  string? midName { get; set; }
+        public  string? middleName { get; set; }
         public required string lastName { get; set; }
         public int gender { get; set; }
         public bool IsMarried { get; set; } = false;
-        public int permentAddress { get; set; }
-        public int TemporaryAddress { get; set; }
+        public string? spouseName { get; set; }
 
     }
 }

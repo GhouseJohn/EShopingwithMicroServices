@@ -7,6 +7,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using Eshoping.Registration.userRegistrationServices.IuserRegistrationServices;
 
 namespace Eshoping.Registration.Controllers
 {
@@ -14,16 +15,17 @@ namespace Eshoping.Registration.Controllers
     [ApiController]
     public class UserRegistrationController : ControllerBase
     {
-        //private readonly IUserregistration IUserregistration;
+        private readonly IUserRegistartionDependencyService IUserregistration;
         private readonly IMediator _mediator;
 
-        public UserRegistrationController(IMediator mediator)
+        public UserRegistrationController(IMediator mediator, IUserRegistartionDependencyService UserDependencyService)
         {
             this._mediator = mediator;
+            this.IUserregistration = UserDependencyService;
         }
 
         [HttpPost("Registration")]
-        public IActionResult Registeruser( UserRegistration model)
+        public async Task<IActionResult> Registeruser( UserRegistration model)
         {
             var validationResults = new List<ValidationResult>();
             var validationContext = new ValidationContext(model);
@@ -32,6 +34,7 @@ namespace Eshoping.Registration.Controllers
 
             if (isValid)
             {
+              var x= await this.IUserregistration.SaveUserData(model);
                 return Ok("Model is valid!");
             }
             else
