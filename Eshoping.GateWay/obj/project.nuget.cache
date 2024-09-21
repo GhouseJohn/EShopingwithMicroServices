@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "oQ1+CukT2HJWpQ2VR44FvQdUqyqCmEfGMgkqJvg1ZXD6EGBR5V+q6rPBrh4P2LKm/Jkn4EhSS39JQXxUwjLutA==",
+  "dgSpecHash": "DP2QqzTsc9lFwFaLQ6IeyPfoNngfFw1IGeyslRLNbDKWcA2msjL6x8gbx+s1DLkw1cApzcgFb3SAM7A5XYcr0Q==",
   "success": true,
   "projectFilePath": "D:\\shopingProject\\microservice\\EShoping.App\\Eshoping.GateWay\\Eshoping.GateWay.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\Mohd Gosoddin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
