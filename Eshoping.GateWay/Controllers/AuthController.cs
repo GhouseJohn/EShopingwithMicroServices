@@ -2,6 +2,7 @@
 using Eshoping.GateWay.model.viewModel;
 using Eshoping.GateWay.services.AuthService;
 using Eshoping.GateWay.services.IAuthService;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -15,7 +16,7 @@ namespace Eshoping.GateWay.Controllers
 
         private readonly ILoginService loginService;
         private readonly ITokenProvider tokenProvider;
-        public AuthController(ILoginService loginService,ITokenProvider tokenProvider)
+        public AuthController(ILoginService loginService, ITokenProvider tokenProvider)
         {
             this.loginService = loginService;
             this.tokenProvider = tokenProvider;
@@ -29,19 +30,26 @@ namespace Eshoping.GateWay.Controllers
             if (responseDto.Result != null)
             {
                 LoginResponseDto? loginResponseDto = JsonConvert.DeserializeObject<LoginResponseDto>(Convert.ToString(responseDto.Result));
-                this.tokenProvider.SetToken(loginResponseDto.Token);
+                this.tokenProvider.SetToken(loginResponseDto!.Token);
                 return Results.Ok(loginResponseDto);
             }
             return Results.NotFound();
 
         }
 
-        [HttpGet]
+           [HttpGet("/GetToken")]
         public string GetToken()
         {
             string _token = string.Empty;
-            _token = tokenProvider.GetToken();
+            _token = tokenProvider.GetToken()!;
             return _token;
+        }
+        [HttpGet("/Logout")]
+        public async Task<IResult> Logout()
+        {
+            await HttpContext.SignOutAsync();
+            tokenProvider.ClearToken();
+            return Results.Ok();
         }
     }
 }
