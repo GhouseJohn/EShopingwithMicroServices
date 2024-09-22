@@ -1,5 +1,8 @@
-using Eshoping.GateWay.services;
+using Eshoping.GateWay.services.AuthService;
+using Eshoping.GateWay.services.defaultService;
+using Eshoping.GateWay.services.IAuthService;
 using Eshoping.GateWay.services.IServices;
+using Eshoping.GateWay.services.Services;
 using Eshoping.GateWay.utility;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,11 +17,24 @@ builder.Services.AddSwaggerGen();
 
 //SD Services
 SD.BookStoredAPIBase = builder.Configuration["ServiceUrls:BookStoredAPIBase"];
+SD.AuthApi = builder.Configuration["ServiceUrls:AuthApi"];
 
 //Dependency 
-builder.Services.AddScoped<IBaseService, BaseService>();
-builder.Services.AddScoped<IBookDefaultService, BookDefaultService>();
+
 builder.Services.AddHttpClient();
+builder.Services.AddHttpContextAccessor();
+
+builder.Services.AddHttpClient<IBookDefaultService, BookDefaultService>();
+builder.Services.AddHttpClient<ILoginService, LoginService>();
+
+builder.Services.AddScoped<IBookDefaultService, BookDefaultService>();
+builder.Services.AddScoped<IBaseService, BaseService>();
+builder.Services.AddScoped<ILoginService, LoginService>();
+builder.Services.AddScoped<ITokenProvider,TokenProvider>();
+
+
+
+
 
 var app = builder.Build();
 

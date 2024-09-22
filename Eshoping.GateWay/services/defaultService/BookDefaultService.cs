@@ -1,9 +1,9 @@
-﻿using Eshoping.GateWay.model;
+﻿using Eshoping.GateWay.model.dto;
 using Eshoping.GateWay.services.IServices;
 using Eshoping.GateWay.utility;
 using System;
 
-namespace Eshoping.GateWay.services
+namespace Eshoping.GateWay.services.defaultService
 {
     public class BookDefaultService : IBookDefaultService
     {
@@ -11,14 +11,14 @@ namespace Eshoping.GateWay.services
 
         public BookDefaultService(IBaseService baseService)
         {
-            this._baseService = baseService;
+            _baseService = baseService;
         }
         public async Task<ResponseDto> GetWeatherRepo()
         {
             ResponseDto? _res = await _baseService.SendAsync(new RequestDto()
             {
                 ApiType = SD.ApiType.GET,
-                Url = SD.BookStoredAPIBase + "WeatherForecast",
+                Url = SD.BookStoredAPIBase + "api/BookCollection",
             });
             return _res;
 

@@ -2,7 +2,7 @@
 using static Eshoping.GateWay.utility.SD;
 using System.Net.Mime;
 
-namespace Eshoping.GateWay.model
+namespace Eshoping.GateWay.model.dto
 {
     public class RequestDto
     {

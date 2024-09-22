@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Eshoping.GateWay\Eshoping.GateWay.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿namespace EShoping.Authentication.model
+﻿namespace EShoping.Authentication.model.dto
 {
     public class LoginResponseDto
     {

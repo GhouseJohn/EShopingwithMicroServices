@@ -1,4 +1,5 @@
 ﻿using EShoping.Authentication.model;
+using EShoping.Authentication.model.dto;
 using EShoping.Authentication.utility;
 using Microsoft.AspNetCore.Identity;
 using System;

@@ -1,4 +1,4 @@
-﻿using EShoping.Authentication.model;
+﻿using EShoping.Authentication.model.dto;
 
 namespace EShoping.Authentication.services
 {

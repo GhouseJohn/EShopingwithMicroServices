@@ -1,4 +1,4 @@
-﻿using Eshoping.GateWay.model;
+﻿using Eshoping.GateWay.model.dto;
 
 namespace Eshoping.GateWay.services.IServices
 {

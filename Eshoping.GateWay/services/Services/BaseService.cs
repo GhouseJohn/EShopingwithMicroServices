@@ -1,27 +1,28 @@
-﻿using Eshoping.GateWay.model;
+﻿using Eshoping.GateWay.model.dto;
 using Eshoping.GateWay.services.IServices;
 using Eshoping.GateWay.utility;
 using Newtonsoft.Json;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 
 
-namespace Eshoping.GateWay.services
+namespace Eshoping.GateWay.services.Services
 {
     public class BaseService : IBaseService
     {
         public ResponseDto responseModel { get; set; }
-        public IHttpClientFactory httpClient { get; set; }
-        public BaseService(IHttpClientFactory httpClientFactory)
+        public IHttpClientFactory httpClient;
+        public BaseService(IHttpClientFactory _httpClientFactory)
         {
-            this.responseModel = new ResponseDto();
-            this.httpClient = httpClient;
+            responseModel = new ResponseDto();
+            httpClient = _httpClientFactory;
         }
         public async Task<ResponseDto>? SendAsync(RequestDto apiRequest)
         {
             try
             {
-                var client = httpClient.CreateClient("MangoAPI");
+                HttpClient client = httpClient.CreateClient("MangoAPI");
                 HttpRequestMessage message = new HttpRequestMessage();
                 message.Headers.Add("Accept", "application/json");
                 message.RequestUri = new Uri(apiRequest.Url);
@@ -62,6 +63,7 @@ namespace Eshoping.GateWay.services
                         return new() { IsSuccess = false, Meassage = "InternalServerError" };
                     default:
                         var apicontent = await apiResponse.Content.ReadAsStringAsync();
+                        // var _someWait = modifyData(apicontent);
                         var apiresponseDto = JsonConvert.DeserializeObject<ResponseDto>(apicontent);
                         return apiresponseDto;
                 }
@@ -72,6 +74,13 @@ namespace Eshoping.GateWay.services
 
                 throw;
             }
+        }
+
+        private ResponseDto modifyData(string apicontent)
+        {
+            ResponseDto responseDto = new ResponseDto();
+            responseDto.Result = apicontent;
+            return responseDto;
         }
     }
 }

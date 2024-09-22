@@ -1,3 +1,5 @@
+using EShoping.BookStore.services;
+using EShoping.BookStore.services.IServices;
 using EShoping.BookStore.utility;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +16,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+//Dependencies
+builder.Services.AddTransient<IBookCollection, BookCollection>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +30,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+//app.UseAuthorization();
 
 app.MapControllers();
 

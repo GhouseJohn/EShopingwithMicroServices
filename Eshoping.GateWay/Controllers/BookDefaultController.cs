@@ -1,4 +1,6 @@
-﻿using Eshoping.GateWay.services.IServices;
+﻿using Eshoping.GateWay.model;
+using Eshoping.GateWay.model.BookModel;
+using Eshoping.GateWay.services.defaultService;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -14,18 +16,11 @@ namespace Eshoping.GateWay.Controllers
             bookDefaultService = _bookDefaultService;
         }
         [HttpGet]
-        public async Task<IResult> TestBookService()
+        public async Task<List<BookCatalog>?> TestBookService()
         {
             var _res = await bookDefaultService.GetWeatherRepo();
-            if(_res == null)
-            {
-              return  Results.BadRequest(_res);
-            }
-            else
-            {
-                //  var _finalData= JsonConvert.DeserializeObject<List<UserInfo>>(Convert.ToString(_res.result));
-                return null;
-            }
+            List<BookCatalog>? _finalData = JsonConvert.DeserializeObject<List<BookCatalog>>(Convert.ToString(_res.Result));
+            return _finalData == null ? null : _finalData;
         }
     }
 }
