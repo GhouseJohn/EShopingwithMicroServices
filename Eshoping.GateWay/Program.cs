@@ -4,6 +4,7 @@ using Eshoping.GateWay.services.IAuthService;
 using Eshoping.GateWay.services.IServices;
 using Eshoping.GateWay.services.Services;
 using Eshoping.GateWay.utility;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,7 +31,16 @@ builder.Services.AddHttpClient<ILoginService, LoginService>();
 builder.Services.AddScoped<IBookDefaultService, BookDefaultService>();
 builder.Services.AddScoped<IBaseService, BaseService>();
 builder.Services.AddScoped<ILoginService, LoginService>();
-builder.Services.AddScoped<ITokenProvider,TokenProvider>();
+builder.Services.AddScoped<ITokenProvider, TokenProvider>();
+
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.ExpireTimeSpan = TimeSpan.FromHours(10);
+        options.LoginPath = "api/Auth";
+        options.AccessDeniedPath = "/Auth/AccessDenied";
+    });
 
 
 

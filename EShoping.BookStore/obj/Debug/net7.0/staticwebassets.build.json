@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "9tppx44GRXfK86Q8SXGvlRrCk8UEDNQgsUUvZfHCUyY=",
+  "Hash": "dPvpnUmp7Dh8h9QJAW4ppmqf72Mcnvd4FGAk0uSkMPA=",
   "Source": "EShoping.BookStore",
   "BasePath": "_content/EShoping.BookStore",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\shopingProject\\microservice\\EShoping.App\\Eshoping.GateWay\\Eshoping.GateWay.csproj",
+      "Version": 2,
+      "Source": "Eshoping.GateWay",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }
